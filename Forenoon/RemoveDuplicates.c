@@ -1,19 +1,18 @@
 #include <stdio.h>
 void remove_duplicates(int a[], int n)
 {
-    int c=0, distinct[n];
-    distinct [c++] = a[0];
+    int j=0;
     for (int i=1; i<n; i++)
     {
-        if (a[i] != a[i-1])
+        if (a[i] != a[j])
         {
-            distinct[c] = a[i];
-            c++;
+            j++;
+            a[j] = a[i];
         }
     }
-    printf ("%d\n", c);
-    for (int i=0; i<c; i++)
-        printf ("%d ", distinct[i]);
+    printf ("%d\n", j+1);
+    for (int i=0; i<=j; i++)
+        printf ("%d ", a[i]);
     printf ("\n");
 }
 int main()
